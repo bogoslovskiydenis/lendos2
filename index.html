@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" href="favicon.ico"/>
+    <title>Bratanbet - CLEO</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/hw.css">
+    <link rel="stylesheet" href="css/form.css">
+    <script src="https://bratanbet.com/ru/login"></script>
+</head>
+<body>
+<div class="preload">
+    <img src="images/cont.png" alt="1">
+    <img src="images/bg.jpg" alt="1">
+</div>
+
+<div class="wrapper">
+
+    <div class="bg">
+
+        <div class="bg-desk"></div>
+
+        <div class="bg-mob"></div>
+
+    </div>
+
+    <div class="video-bg">
+
+        <video id="video-bg-1" autoplay loop muted width="1930" height="1252" data-keepplaying>
+            <source src="video/bg1.mp4" type="video/mp4">
+        </video>
+
+        <video id="video-bg-2" loop muted width="1930" height="1252" data-keepplaying>
+            <source src="video/bg2.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+    <div class="main-cont">
+
+        <div class="wall"></div>
+
+        <div class="wheel-cont">
+            <div class="wheel-bg"></div>
+            <div class="wheel default"></div>
+            <div class="wheel-frame"></div>
+            <div class="wheel-border"></div>
+            <a href="setCookieBtn" class="logo logo-wheel">
+                <img src="images/logo.svg"  height="auto" alt="Logo">
+            </a>
+            <div class="wheel-center"></div>
+        </div>
+
+        <div class="main-btn cont">
+            <div class="main-btn-border"></div>
+            <div class="main-btn-n"></div>
+            <div class="main-btn-h hover"></div>
+        </div>
+
+        <div class="cleo-cont">
+            <div class="cleo-shadow"></div>
+            <div class="cleo-hand-left"></div>
+            <div class="cleo-body"></div>
+            <div class="cleo-hand-right"></div>
+            <div class="cleo-head"></div>
+        </div>
+
+    </div>
+
+    <div class="popup">
+
+        <!-- hidden -->
+        <div class="popub-form hidden">
+            <a href="https://bratanbet.com/ru/login" class="btn" target="_blank">ЛОГИНГЕ КІРУ</a>
+            <a href="https://bratanbet.com/ru/login" class="btn btn-sing" target="_blank">ТІРКЕЛУ</a>
+        </div>
+
+        <div class="popup-window">
+
+            <div class="popup-text-1">
+
+                <div class="popup-text-try-again"></div>
+
+                <div class="popup-btn" id="turn-btn">
+                    <div class="main-btn-n normal"></div>
+                    <div class="main-btn-h hover"></div>
+                </div>
+            </div>
+
+            <div class="popup-text-2">
+
+                <div class="popup-text-you-bonus"></div>
+
+                <a href="https://bratanbet.com/ru/login" class="popup-btn get-btn">
+                    <div class="popup-btn-get-n"></div>
+                    <div class="popup-btn-get-h"></div>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="intro">
+
+        <div class="intro-cont">
+
+            <div class="intro-text-turn-wheel">
+
+                <div class="intro-text-turn"></div>
+
+                <div class="intro-text-wheel"></div>
+
+            </div>
+
+            <div class="intro-text-get-bonuses">
+
+                <div class="intro-text-get"></div>
+
+                <div class="intro-text-bonuses"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="preloader">
+        <img src="images/preloader.svg" alt="" width="64" height="64">
+    </div>
+
+    <div class="reg-btn-cont">
+
+        <a href="https://bratanbet.com/ru/login" id="setCookieBtn" class="reg-btn"></a>
+        <a href="https://bratanbet.com/ru/login" id="setCookieBtn" class="entry-btn"></a>
+
+        <a href="https://bratanbet.com/ru/login" class="reg-icon"  id="setCookieBtn">
+            <img src="images/reg-icon.svg" alt="" width="40" height="38">
+        </a>
+        <a href="https://bratanbet.com/ru/login" id="setCookieBtn" class="entry-icon">
+            <img src="images/entry-icon.svg" alt="" width="40" height="38">
+        </a>
+
+    </div>
+
+</div>
+
+
+<audio id="snd-music" loop>
+    <source src="sounds/music.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="snd-reels" loop>
+    <source src="sounds/reels.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="snd-reels-stop">
+    <source src="sounds/reelstop.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="snd-popup-1">
+    <source src="sounds/popup-1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="snd-popup-2">
+    <source src="sounds/popup-2.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="snd-win">
+    <source src="sounds/win.mp3" type="audio/mpeg">
+</audio>
+
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script src="js/main.min.js"></script>
+<script src="js/hw.js"></script>
+<!--<script src="js/form.js"></script>-->
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+
+        const currentUrl = window.location.href;
+        const links = document.querySelectorAll("a");
+        const questionMarkIndex = currentUrl.indexOf("?");
+
+        if (questionMarkIndex !== -1) {
+            const trimmedUrl = currentUrl.substring(questionMarkIndex);
+
+            // РџРµСЂРµР±СЂР°С‚Рё РєРѕР¶РЅРµ РїРѕСЃРёР»Р°РЅРЅСЏ
+            for (const link of links) {
+                const href = link.getAttribute("href");
+
+                if (href !== null) {
+                    link.setAttribute("href", href + trimmedUrl + '#signup');
+                }
+            }
+        } else {
+            for (const link of links) {
+                const href = link.getAttribute("href");
+
+                if (href !== null) {
+                    link.setAttribute("href", href  + '#signup');
+                }
+            }
+        }
+
+    });
+</script>
+
+</body>
+
+</html>
